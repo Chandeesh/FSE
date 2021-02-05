@@ -1,0 +1,56 @@
+
+<div class="bs-example">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a href="#" class="navbar-brand">
+            <img src="http://localhost:8080/products/api/image?name=logo" height="28" alt="RMI">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link active">Home</a>
+                <a href="#" class="nav-item nav-link">About Us</a>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <a routerLink='/loginuser' class="nav-item nav-link">Login</a>
+                <a routerLink='/registeruser' class="nav-item nav-link">Register</a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<form (ngSubmit)="onSubmit()" style="border:1px solid #ccc">
+  <div class="container">
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" [(ngModel)]="user.email" placeholder="Enter Email" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" [(ngModel)]="user.password" placeholder="Enter Password" name="psw" required>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password"  [(ngModel)]="user.confirmpassword" placeholder="Repeat Password" name="psw-repeat" required>
+
+    <label for="Address"><b>Address</b></label>
+    <input type="text"  [(ngModel)]="user.address" placeholder="Enter Address" name="Address" required>
+
+    <label for="Phone"><b>Phone</b></label>
+    <input type="text"  [(ngModel)]="user.phone" placeholder="Enter Phone" name="Phone" required>
+    
+    <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>  
+    
+    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </div>
+</form>

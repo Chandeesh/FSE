@@ -1,0 +1,30 @@
+<table class="table">
+	<thead class="thead-light">
+		<tr>
+			<th scope="col">Product Name</th>
+			<th scope="col">Price</th>
+			<th scope="col">Quantity</th>
+			<th scope="col">Order Type</th>
+			<th scope="col">Status</th>
+			<th scope="col">Address</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let car of cart">
+			<td>{{car.name}}</td>
+			<td>{{car.price}}</td>
+			<td>{{car.qty}}</td>
+			<td>{{car.purchaseType}}</td>
+			<td>{{status}}</td>
+			<td>{{car.address}}</td>
+		</tr>
+	</tbody>
+</table>
+<div>
+<b>Total Price: {{total}}   </b>
+<b>Discount from credits: 50</b>
+</div>
+<div class="clearfix">
+	<button type="button" class="btn btn-primary" (click)="placeOrder()">Place
+		Order</button>
+</div>
