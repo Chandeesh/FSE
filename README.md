@@ -1,4 +1,4 @@
-An ECommerce application developed in fulfillment of the course Software Engineering.
+An ECommerce application developed in fulfillment of the course Software Engineering pursued in interest of Masters degree in Software Engineering at Hochschule Hof.
 To run the application you need MongoDB.
   1. Install MongoDB
   2. Start Mongod Server
