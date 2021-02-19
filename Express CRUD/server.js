@@ -31,14 +31,6 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// simple route
-app.get("/welcome/:name", (req, res) => {
-  res.send({ message: "Welcome to bezkoder application." + req.params.name });
-});
-
-app.post("/welcome", (req, res) => {
-  res.send(req.body);
-});
 
 require("./routes/user.routes.js")(app);
 
