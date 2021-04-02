@@ -1,4 +1,7 @@
 node {
+   stage('Git checkout') { // for display purposes
+      git 'https://github.com/Chandeesh/FSE.git'
+   }
    stage('UI') {
         try {
            script {
