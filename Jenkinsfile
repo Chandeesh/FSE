@@ -2,7 +2,7 @@ node {
    stage('UI') {
         try {
            script {
-            sh "./gradlew clean test --no-daemon"
+            sh "gradlew clean test --no-daemon"
            }
         } catch (err) {
 
