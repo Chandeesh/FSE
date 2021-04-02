@@ -1,6 +1,6 @@
 node {
    stage('Git checkout') { // for display purposes
-      git 'https://github.com/Chandeesh/FSE.git'
+      git -b 'ECommerce_SE_Test_UI' 'https://github.com/Chandeesh/FSE.git'
    }
    stage('UI') {
         try {
