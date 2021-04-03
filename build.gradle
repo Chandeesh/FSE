@@ -21,6 +21,9 @@ apply plugin: 'java'
 apply plugin: 'net.serenity-bdd.aggregator'
 apply plugin: 'java-library'
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 // In this section you declare where to find the dependencies of your project
 repositories {
     // Use jcenter for resolving your dependencies.
@@ -42,10 +45,22 @@ dependencies {
 	compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.7', ext: 'pom'
 	testCompile group: 'org.assertj', name: 'assertj-core', version: '3.19.0'
 	compile group: 'net.serenity-bdd', name: 'serenity-screenplay', version: '2.3.12'
-	compile group: 'io.cucumber', name: 'cucumber-java', version: '6.6.0'
-	testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '6.6.0'
-	compile group: 'io.cucumber', name: 'cucumber-core', version: '6.6.0'
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }
 
+test {
+ 
+  // explicitly include or exclude tests
+  //include 'com/test/runner/**'
+
+  // show standard out and standard error of the test JVM(s) on the console
+  testLogging.showStandardStreams = false
+
+  // set heap size for the test JVM(s)
+  minHeapSize = "128m"
+  maxHeapSize = "512m"
+
+  // set JVM arguments for the test JVM(s)
+
+}
