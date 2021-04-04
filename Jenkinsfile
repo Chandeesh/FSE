@@ -6,7 +6,7 @@ node {
 
         } finally {
             publishHTML (target: [
-            reportDir: 'target/site/serenity',
+            reportDir: 'reports',
             reportFiles: 'index.html',
             reportName: "UI tests report"
             ])
