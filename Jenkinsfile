@@ -1,7 +1,12 @@
 node {
+    stage('Git checkout') { // for display purposes
+      git branch: 'ECommerce_SE_Test_UI', url: 'https://github.com/Chandeesh/FSE.git'
+   }
    stage('UI') {
         try {
-            sh "./gradlew clean test aggregate"
+           script {
+              sh "./gradlew clean test aggregate --no-daemon"
+           }
         } catch (err) {
 
         } finally {
