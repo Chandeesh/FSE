@@ -9,7 +9,7 @@ Feature: Test all the features of the Ecommerce application
 
     Examples: 
       | Test Case         | username              | password |
-      | Valid Credentials | chandeesh64@yahoo.com |      123 |
+      | Valid Credentials | chandeesh64@yahoocom |      123 |
 
   @LoginUserFailure
   Scenario Outline: Verify the login response upon the given inputs

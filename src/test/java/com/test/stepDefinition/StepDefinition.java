@@ -12,7 +12,6 @@ public class StepDefinition {
 	
 	@Given("^a Ecommerce website$")
 	public void a_Ecommerce_website() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
 		
 	}
 
