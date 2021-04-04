@@ -19,4 +19,4 @@ Feature: Test all the features of the Ecommerce application
 
     Examples: 
       | Test Case             | username | password |
-      | Incorrect Credentials | asd      | dasdsad  |
+      #| Incorrect Credentials | asd      | dasdsad  |
