@@ -1,0 +1,18 @@
+<div class="row">
+	<div *ngFor="let prod of product">
+		<div class="card bg-light mb-3" style="max-width: 20rem;margin-left:60px;margin-top:30px">
+			<div class="card-header">{{prod.name}}</div>
+			<div class="card-body">
+				<img src="http://localhost:8080/products/api/image?name={{prod.name}}" height="200px" width="280px">
+				<p class="card-text">{{prod.description}}</p>
+			</div>
+			<b>Price:</b> {{prod.price}}
+			<b>Qty Available:</b> {{prod.qty}}<br>
+			<b>Seller Name:</b> {{prod.sellerName}}
+			<div class="clearfix">
+				<button type="button" class="signupbtn" (click)="addBuy(prod.name,prod.price,prod.qty)">Buy</button>
+				<button type="button" (click)="addRent(prod.name,prod.price,prod.qty)" class="signupbtn">Rent</button>
+			</div>
+		</div>
+	</div>
+</div>

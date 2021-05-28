@@ -1,0 +1,25 @@
+<div class="bs-example">
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+		<a href="#" class="navbar-brand">
+			<img src="http://localhost:8080/products/api/image?name=logo" height="28" alt="RMI">
+		</a>
+		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<div class="navbar-nav">
+				<a routerLink="" class="nav-item nav-link active">Home</a>
+				<a routerLink="" (click)="sell()" class="nav-item nav-link">Sell Products</a>
+				<a routerLink="" (click)="view()" class="nav-item nav-link">View Products</a>
+				<a routerLink="" (click)="goToCart()" class="nav-item nav-link">Go To Cart</a>
+				<a routerLink="" (click)="complaint()" class="nav-item nav-link">Raise Complaint</a>
+				<a href="#" class="nav-item nav-link">About Us</a>
+			</div>
+			<div class="navbar-nav ml-auto">
+				<button (click)="logout()" class="btn btn-link">Logout</button>
+			</div>
+		</div>
+	</nav>
+</div>
+<router-outlet></router-outlet>
