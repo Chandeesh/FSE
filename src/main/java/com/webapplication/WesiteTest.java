@@ -9,37 +9,49 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 public class WesiteTest extends PageObject {
 
-	@FindBy(xpath="//*[@name='email']")
+	@FindBy(xpath="//*[@id='email']")
 	private WebElementFacade userid;
 	
-	@FindBy(xpath="//*[@name='psw']")
+	@FindBy(xpath="//*[@type='password']")
 	private WebElementFacade password;
 
-	@FindBy(xpath="//*[@class='signupbtn']")
+	@FindBy(xpath="//a[contains(text(),'Login')]")
 	private WebElementFacade loginBtn;
 	
-	@FindBy(xpath="//a[contains(text(),'Manage Customers')]")
-	private WebElementFacade manage;
+	@FindBy(xpath="//*[@type='submit']")
+	private WebElementFacade submit;
 	
-	@FindBy(xpath="//a[contains(text(),'View Products')]")
-	private WebElementFacade products;
+	@FindBy(xpath="//a[contains(text(),'Weight')]")
+	private WebElementFacade weight;
 	
-	@FindBy(xpath="//div[contains(text(),'Incorrect Credentials')]")
-	private WebElementFacade incorrect;
+	@FindBy(xpath="//div[@role='alertdialog']")
+	private WebElementFacade failureToast;
 	
-	public void loginUser(String username, String pass) {
+	@FindBy(xpath="//*[@class='flot-overlay']")
+	private WebElementFacade weightGraph;
+	
+	public void loginUser(String url,String username, String pass) {
 		WebDriver driver = getDriver();
-		driver.get("http://localhost:8080");
-//		userid.sendKeys(username);
-//		password.sendKeys(pass);
-//		loginBtn.click();
+		driver.get(url);
+		loginBtn.click();
+		userid.sendKeys(username);
+		password.sendKeys(pass);
+		submit.click();
+	}
+	
+	public void clickWeight() {
+		weight.click();
 	}
 	
 	public void successLoginUser() {
-//		Assert.assertEquals(products.getText(), "View Products");
+		Assert.assertTrue(weight.isPresent());
 	}
 	
 	public void failureLogin() throws InterruptedException {
-//		Assert.assertEquals(incorrect.getText(), "Incorrect Credentials");
+		Assert.assertTrue(failureToast.isDisplayed());
+	}
+	
+	public void assertPlot() throws InterruptedException {
+		Assert.assertTrue(weightGraph.isDisplayed());
 	}
 }

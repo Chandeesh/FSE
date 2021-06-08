@@ -13,7 +13,7 @@ buildscript {
 		jcenter()
 	}
 	dependencies {
-		classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.91")
+		classpath("net.serenity-bdd:serenity-gradle-plugin:2.4.24")
 	}
 }
 
@@ -37,16 +37,17 @@ dependencies {
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:23.0'
-	compile group: 'net.serenity-bdd', name: 'serenity-core', version: '2.0.91'
-	compile group: 'net.serenity-bdd', name: 'serenity-cucumber', version: '1.5.7'
-	compile group: 'net.serenity-bdd', name: 'serenity-report-resources', version: '2.0.91'
-	compile group: 'net.serenity-bdd', name: 'serenity-junit', version: '2.0.91'
+	compile group: 'net.serenity-bdd', name: 'serenity-core', version: '2.4.34'
+	implementation group: 'net.serenity-bdd', name: 'serenity-cucumber6', version: '2.4.24'
+	compile group: 'net.serenity-bdd', name: 'serenity-report-resources', version: '2.4.34'
+	compile group: 'net.serenity-bdd', name: 'serenity-junit', version: '2.4.34'
 	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.1'
 	compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '3.0.7', ext: 'pom'
 	testCompile group: 'org.assertj', name: 'assertj-core', version: '3.19.0'
-	compile group: 'net.serenity-bdd', name: 'serenity-screenplay', version: '2.3.12'
+	implementation group: 'net.serenity-bdd', name: 'serenity-screenplay', version: '2.4.34'
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+    implementation group: 'net.serenity-bdd', name: 'serenity-rest-assured', version: '2.4.34'
 }
 
 test {
@@ -56,7 +57,7 @@ test {
 
   // show standard out and standard error of the test JVM(s) on the console
   testLogging.showStandardStreams = false
-
+  ignoreFailures = true
   // set heap size for the test JVM(s)
   minHeapSize = "128m"
   maxHeapSize = "512m"
