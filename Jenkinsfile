@@ -1,9 +1,8 @@
-node {
+pipeline {
   stages {
     stage('Git checkout') { 
-     steps{
+    // for display purposes
       git branch: 'ECommerce_SE_Test_UI', url: 'https://github.com/Chandeesh/FSE.git'
-      }
    	}
    	stage('UI') {
         try {
