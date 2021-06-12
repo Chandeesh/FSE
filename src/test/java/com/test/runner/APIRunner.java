@@ -11,6 +11,6 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
         glue= {"com.test.stepDefinition"},
         tags= "@AcceptanceTestAPI"
 )
-public class TestRunner {
+public class APIRunner {
 
 }

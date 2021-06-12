@@ -1,20 +1,36 @@
 node {
+  stages {
     stage('Git checkout') { // for display purposes
       git branch: 'ECommerce_SE_Test_UI', url: 'https://github.com/Chandeesh/FSE.git'
-   }
-   stage('UI') {
+   	}
+   	stage('UI') {
         try {
            script {
-              sh "./gradlew clean test aggregate --no-daemon"
+              sh "./gradlew clean uitest --no-daemon"
            }
         } catch (err) {
 
-        } finally {
-            publishHTML (target: [
-            reportDir: 'reports',
-            reportFiles: 'index.html',
-            reportName: "UI tests report"
-            ])
+        } 
+  ` }
+   
+     stage('API') {
+        try {
+           script {
+              sh "./gradlew apitest --no-daemon"
+           }
+        } catch (err) {
+
+        } 
+   	 }
+   	 
+   	 stage('Aggregate') {
+   	 try {
+           script {
+              sh "./gradlew aggregate --no-daemon"
+           }
+        } catch (err) {
+
         }
+   	 }
    }
 }

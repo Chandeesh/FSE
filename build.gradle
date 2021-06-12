@@ -50,18 +50,34 @@ dependencies {
     implementation group: 'net.serenity-bdd', name: 'serenity-rest-assured', version: '2.4.34'
 }
 
-test {
+task uitest(type: Test) {
  
+  test {
   // explicitly include or exclude tests
-  //include 'com/test/runner/**'
-
+  include 'com/test/runner/UIRunner'
+  exclude 'com/test/runner/APIRunner'
   // show standard out and standard error of the test JVM(s) on the console
   testLogging.showStandardStreams = false
   ignoreFailures = true
   // set heap size for the test JVM(s)
   minHeapSize = "128m"
   maxHeapSize = "512m"
-
+ }
   // set JVM arguments for the test JVM(s)
 
+}
+
+task apitest(type: Test) {
+ 
+  test {
+  // explicitly include or exclude tests
+  include 'com/test/runner/APIRunner'
+  exclude 'com/test/runner/UIRunner'
+  // show standard out and standard error of the test JVM(s) on the console
+  testLogging.showStandardStreams = false
+  ignoreFailures = true
+  // set heap size for the test JVM(s)
+  minHeapSize = "128m"
+  maxHeapSize = "512m"
+ }
 }
