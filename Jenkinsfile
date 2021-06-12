@@ -11,7 +11,7 @@ node {
         } catch (err) {
 
         } 
-  ` }
+    }
    
      stage('API') {
         try {
