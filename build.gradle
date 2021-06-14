@@ -58,11 +58,12 @@ task uitest(type: Test) {
   exclude 'com/test/runner/APIRunner'
   // show standard out and standard error of the test JVM(s) on the console
   testLogging.showStandardStreams = false
-  ignoreFailures = true
+  
   // set heap size for the test JVM(s)
   minHeapSize = "128m"
   maxHeapSize = "512m"
  }
+ ignoreFailures = true
   // set JVM arguments for the test JVM(s)
 
 }
