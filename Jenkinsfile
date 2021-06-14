@@ -18,7 +18,12 @@ pipeline {
    	 }
    	 stage('Aggregate') {
    	 	steps {
-              sh "./gradlew aggregate --no-daemon"             
+              sh "./gradlew aggregate --no-daemon"  
+              publishHTML (target: [
+              reportDir: 'reports',
+              reportFiles: 'index.html',
+              reportName: "Test report"
+            ])           
         }
    	 }
    }
