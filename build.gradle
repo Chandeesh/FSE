@@ -52,33 +52,25 @@ dependencies {
 
 task uitest(type: Test) {
  
-  test {
+	exclude 'com/test/runner/APIRunner.class'
   // explicitly include or exclude tests
-  include 'com/test/runner/UIRunner'
-  exclude 'com/test/runner/APIRunner'
   // show standard out and standard error of the test JVM(s) on the console
   testLogging.showStandardStreams = false
-  
   // set heap size for the test JVM(s)
   minHeapSize = "128m"
   maxHeapSize = "512m"
- }
- ignoreFailures = true
-  // set JVM arguments for the test JVM(s)
 
+ ignoreFailures = true
 }
 
 task apitest(type: Test) {
- 
-  test {
+  exclude 'com/test/runner/UIRunner.class'
   // explicitly include or exclude tests
-  include 'com/test/runner/APIRunner'
-  exclude 'com/test/runner/UIRunner'
   // show standard out and standard error of the test JVM(s) on the console
   testLogging.showStandardStreams = false
-  ignoreFailures = true
   // set heap size for the test JVM(s)
   minHeapSize = "128m"
   maxHeapSize = "512m"
- }
+
+ ignoreFailures = true
 }
